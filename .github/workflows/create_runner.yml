@@ -4,13 +4,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_runner:
+  create_self_hosted_runner:
     runs-on: ubuntu-latest
 
     steps:
       - name: 🚀
         run: |
           echo "Start time 🚀 : $(date)"
+
+      - name: Login Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
 
 

@@ -31,6 +31,18 @@ jobs:
           az group create \
             --name rg_runner_aci \
             --location westeurope
+
+          az container create \
+            --resource-group rg_runner_aci \
+            --name runner-00 \
+            --registry-username peteracr007 \
+            --registry-password $PWD_ACR \
+            --image peteracr007.azurecr.io/ansible:0.0.4 \
+            --restart-policy Never \
+            --environment-variables REPO=ACR-Corporation/runner_ansible TOKEN=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
+
+
           
+        
 
 

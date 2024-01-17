@@ -19,7 +19,11 @@ jobs:
 
       - name: Get the password for the container registry
         run: |
-          PWD_ACR=$(az acr credential show --name peteracr007 --resource-group rg_demo_container --query "passwords[0].value" --output tsv)
+          PWD_ACR=$(az acr credential show \
+                    --name peteracr007 \
+                    --resource-group rg_demo_container \
+                    --query "passwords[0].value" \
+                    --output tsv)
           echo "Password ACR: $PWD_ACR"
 
       - name: Create Azure Container Instance

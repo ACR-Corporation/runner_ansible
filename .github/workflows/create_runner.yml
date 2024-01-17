@@ -19,7 +19,9 @@ jobs:
 
       - name: Create Azure Container Instance
         run: |
-          az group create --name rg_runner_aci --location westeurope
+          az group create \
+            --name rg_runner_aci \
+            --location westeurope
           
 
 

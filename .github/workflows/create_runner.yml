@@ -1,0 +1,16 @@
+name: Azure Container Instance Ansible Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀
+        run: |
+          echo "Start time 🚀 : $(date)"
+          
+
+

@@ -1,0 +1,15 @@
+name: Ansible Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Test ansible
+        run: |
+          ansible --version
+
+      # Add your desired steps here
